@@ -1,6 +1,6 @@
-// src/components/Profile.jsx
 import { useMsal } from '@azure/msal-react';
 import { useIsAuthenticated } from '@azure/msal-react';
+import UserPreferences from "./UserPreferences";
 
 const Profile = () => {
   const { accounts } = useMsal();
@@ -16,6 +16,8 @@ const Profile = () => {
     <div>
       <h2>Welcome, {account.name}</h2>
       <p>Email: {account.username}</p>
+
+      <UserPreferences />
     </div>
   );
 };
